@@ -23,6 +23,11 @@ document.body.innerHTML =
 
 const baza = document.getElementById('baza');
 let pressed = {};
+let a = Object.assign({}, document.getElementById('site').contentWindow)
+console.log(a);
+console.log(a.document);
+console.log(document.getElementById('site').contentWindow);
+console.log(document.getElementById('site').contentWindow.document);
 document.getElementById('site').contentWindow.document.addEventListener('keydown', (event) => {
     pressed[event.code] = true;
     if (event.code === 'AltLeft') {
