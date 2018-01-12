@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
-    res.end('Hello');
+app.get('/script', (req, res) => {
+    res.send('MEGAscript.js');
+});
+
+app.get('/hello', (req, res) => {
+    res.end('hello');
 });
 
 app.listen(process.env.PORT);
