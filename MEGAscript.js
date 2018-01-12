@@ -23,22 +23,21 @@ document.body.innerHTML =
 
 const baza = document.getElementById('baza');
 let pressed = {};
-let a = Object.assign({}, document.getElementById('site').contentWindow)
-console.log(a);
-console.log(a.document);
-console.log(document.getElementById('site').contentWindow);
-console.log(document.getElementById('site').contentWindow.document);
-document.getElementById('site').contentWindow.document.addEventListener('keydown', (event) => {
-    pressed[event.code] = true;
-    if (event.code === 'AltLeft') {
-        console.log('press on site');
-        baza.style.opacity = 1;
-        baza.style.zIndex = 9999;
-    }
-});
+let a = Object.assign({}, document.getElementById('site').contentWindow);
 
-document.getElementById('site').contentWindow.document.addEventListener('keyup', (event) => {
-    baza.style.opacity = 0;
-    baza.style.zIndex = -1;
-    delete pressed[event.code];
-});
+window.setTimeout(() => {
+    document.getElementById('site').contentWindow.document.addEventListener('keydown', (event) => {
+        pressed[event.code] = true;
+        if (event.code === 'AltLeft') {
+            console.log('press on site');
+            baza.style.opacity = 1;
+            baza.style.zIndex = 9999;
+        }
+    });
+    
+    document.getElementById('site').contentWindow.document.addEventListener('keyup', (event) => {
+        baza.style.opacity = 0;
+        baza.style.zIndex = -1;
+        delete pressed[event.code];
+    });    
+}, 5000);
