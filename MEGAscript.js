@@ -21,33 +21,36 @@ document.body.innerHTML =
 '<iframe src="https://exam1.urfu.ru" id="site"></iframe>' +
 '<iframe src="https://ntknet.herokuapp.com/baza" id="baza"></iframe>';
 
-const baza = document.getElementById('baza');
-let pressed = {};
-
-document.getElementById('site').contentWindow.document.addEventListener('keydown', (event) => {
-    pressed[event.code] = true;
-    if (event.code === 'AltLeft') {
-        baza.style.opacity = 1;
-        baza.style.zIndex = 9999;
-    }
-});
-
-document.getElementById('site').contentWindow.document.addEventListener('keyup', (event) => {
-    baza.style.opacity = 0;
-    baza.style.zIndex = -1;
-    delete pressed[event.code];
-});
-
-document.getElementById('baza').contentWindow.document.addEventListener('keydown', (event) => {
-    pressed[event.code] = true;
-    if (event.code === 'AltLeft') {
-        baza.style.opacity = 1;
-        baza.style.zIndex = 9999;
-    }
-});
-
-document.getElementById('baza').contentWindow.document.addEventListener('keyup', (event) => {
-    baza.style.opacity = 0;
-    baza.style.zIndex = -1;
-    delete pressed[event.code];
+document.getElementById('site').contentWindow.document.addEventListener('load', () => {
+    const baza = document.getElementById('baza');
+    let pressed = {};
+    document.getElementById('site').contentWindow.document.addEventListener('keydown', (event) => {
+        pressed[event.code] = true;
+        if (event.code === 'AltLeft') {
+            console.log('press on site');
+            baza.style.opacity = 1;
+            baza.style.zIndex = 9999;
+        }
+    });
+    
+    document.getElementById('site').contentWindow.document.addEventListener('keyup', (event) => {
+        baza.style.opacity = 0;
+        baza.style.zIndex = -1;
+        delete pressed[event.code];
+    });
+    
+    document.getElementById('baza').contentWindow.document.addEventListener('keydown', (event) => {
+        pressed[event.code] = true;
+        if (event.code === 'AltLeft') {
+            console.log('press on baza');
+            baza.style.opacity = 1;
+            baza.style.zIndex = 9999;
+        }
+    });
+    
+    document.getElementById('baza').contentWindow.document.addEventListener('keyup', (event) => {
+        baza.style.opacity = 0;
+        baza.style.zIndex = -1;
+        delete pressed[event.code];
+    });
 });
