@@ -15,8 +15,8 @@ document.body.innerHTML =
         'height: 150px;' +
     '}' +
 '</style>' +
-'<iframe src="https://exam1.urfu.ru" id="site"/>' +
-'<iframe src="https://ntknet.herokuapp.com/baza" id="baza"/>';
+'<iframe src="https://exam1.urfu.ru" id="site"></iframe>' +
+'<iframe src="https://ntknet.herokuapp.com/baza" id="baza"></iframe>';
 
 const baza = document.getElementById('baza');
 
