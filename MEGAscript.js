@@ -26,14 +26,28 @@ let pressed = {};
 
 document.getElementById('site').contentWindow.document.addEventListener('keydown', (event) => {
     pressed[event.code] = true;
-    if (pressed['AltLeft'] && pressed['KeyZ']) {
+    if (event.code === 'AltLeft') {
         baza.style.opacity = 1;
         baza.style.zIndex = 9999;
     }
 });
 
 document.getElementById('site').contentWindow.document.addEventListener('keyup', (event) => {
-    delete pressed[event.code];
     baza.style.opacity = 0;
     baza.style.zIndex = -1;
+    delete pressed[event.code];
+});
+
+document.getElementById('baza').contentWindow.document.addEventListener('keydown', (event) => {
+    pressed[event.code] = true;
+    if (event.code === 'AltLeft') {
+        baza.style.opacity = 1;
+        baza.style.zIndex = 9999;
+    }
+});
+
+document.getElementById('baza').contentWindow.document.addEventListener('keyup', (event) => {
+    baza.style.opacity = 0;
+    baza.style.zIndex = -1;
+    delete pressed[event.code];
 });
