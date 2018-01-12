@@ -12,7 +12,7 @@ document.body.innerHTML =
         'background-color: #fff !important;' +
         'position: absolute;' +
         'opacity: 0;' +
-        'z-index: 9999;' +
+        'z-index: -1;' +
         'width: 500px;' +
         'height: 300px;' +
         'bottom: 0' +
@@ -25,7 +25,7 @@ const baza = document.getElementById('baza');
 let pressed = {};
 let a = Object.assign({}, document.getElementById('site').contentWindow);
 
-window.setTimeout(() => {
+document.getElementById('site').addEventListener('load', () => {
     document.getElementById('site').contentWindow.document.addEventListener('keydown', (event) => {
         pressed[event.code] = true;
         if (event.code === 'AltLeft') {
@@ -40,4 +40,4 @@ window.setTimeout(() => {
         baza.style.zIndex = -1;
         delete pressed[event.code];
     });    
-}, 5000);
+});
