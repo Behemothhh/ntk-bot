@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/script', (req, res) => {
-    res.send('MEGAscript.js');
+    express.static('MEGAscript.js');
 });
 
 app.get('/hello', (req, res) => {
