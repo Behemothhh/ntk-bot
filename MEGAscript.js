@@ -5,4 +5,4 @@ document.body.innerHTML =
         'height: 100vh;' + 
     '}' +
 '</style>' +
-'<iframe src="exam1.urfu.ru" id="site"/>';
+'<iframe src="https://exam1.urfu.ru" id="site"/>';
