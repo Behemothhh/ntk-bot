@@ -24,16 +24,16 @@ document.body.innerHTML =
 const baza = document.getElementById('baza');
 let pressed = {};
 
-window.addEventListener('keydown', (event) => {
-    pressed[event.keyCode] = true;
+document.getElementById('site').contentWindow.document.addEventListener('keydown', (event) => {
+    pressed[event.code] = true;
     if (pressed['AltLeft'] && pressed['KeyZ']) {
         baza.style.opacity = 1;
         baza.style.zIndex = 9999;
     }
 });
 
-window.addEventListener('keyup', (event) => {
-    delete pressed[event.keyCode];
+document.getElementById('site').contentWindow.document.addEventListener('keyup', (event) => {
+    delete pressed[event.code];
     baza.style.opacity = 0;
     baza.style.zIndex = -1;
 });
