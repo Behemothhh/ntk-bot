@@ -49,7 +49,7 @@ document.body.innerHTML =
     '<input type="number" id="bottom" value="0" placeholder="Bottom" step="5">' +
     '<input type="number" id="left" value="0" placeholder="Left" step="5">' +
 '</div>' +
-'<iframe src="https://ntknet.herokuapp.com/baza" id="baza"></iframe>';
+'<iframe src="https://ntknet.herokuapp.com/baza/main.html" id="baza"></iframe>';
 
 const baza = document.getElementById('baza');
 let pressed = {};
