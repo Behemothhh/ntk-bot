@@ -19,22 +19,8 @@ document.body.innerHTML =
         'height: 300px;' +
         'bottom: 0' +
     '}' +
-    '#helper-move {' +
-        'position: absolute;' +
-        'z-index: 99999;' +
-        'width: 5px;' +
-        'height: 5px;' +
-        'bottom: 0;' +
-    '}' +
-    '#helper-size {' +
-        'position: absolute;' +
-        'z-index: 99999;' +
-        'width: 5px;' +
-        'height: 5px;' +
-        'bottom: 295px;' +
-        'left: 495px;' +
-    '}' +
     '#settings {' +
+        'background-color: #fff !important;' +
         'position: absolute;' +
         'opacity: 0;' +
         'z-index: -2;' +
@@ -63,7 +49,8 @@ document.getElementById('site').addEventListener('load', () => {
             console.log('press on site');
             baza.style.opacity = 1;
             baza.style.zIndex = 9999;
-        } else if (pressed['AltLeft'] && pressed['KeyX']) {
+        }
+        if (pressed['AltLeft'] && pressed['KeyX']) {
             toggleSettings();
             delete pressed['AltLeft'];
             delete pressed['KeyX'];
